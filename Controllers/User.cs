@@ -1,6 +1,15 @@
-﻿namespace RPG.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
 
-public class User
+namespace RPG.Controllers;
+
+[Route("api/")]
+[ApiController]
+public class User : Controller
 {
+    public User()
+    {
+        
+    }
     
+    // public Task<IActionResult>
 }
