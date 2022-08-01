@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RPG.Models;
+
 namespace RPG.Context;
 
 public class RpgDbContext : DbContext
@@ -7,4 +9,6 @@ public class RpgDbContext : DbContext
     {
         
     }
+
+    private DbSet<User> Users { get; set; }
 }

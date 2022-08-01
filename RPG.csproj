@@ -18,6 +18,7 @@
 
     <ItemGroup>
       <Folder Include="Context\Repositories" />
+      <Folder Include="Migrations" />
     </ItemGroup>
 
 </Project>
