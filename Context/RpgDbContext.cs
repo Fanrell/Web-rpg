@@ -10,5 +10,7 @@ public class RpgDbContext : DbContext
         
     }
 
-    private DbSet<User> Users { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<RpgSystem> RpgSystems { get; set; }
+    public DbSet<CharacterSheet> CharacterSheets { get; set; }
 }
