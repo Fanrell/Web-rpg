@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net;
+using Microsoft.AspNetCore.Mvc;
 using RPG.Context;
+using RPG.Context.Repositories.Interface;
+using RPG.Contracts;
 using RPG.Models.Enums;
 
 namespace RPG.Controllers;
@@ -9,9 +12,11 @@ namespace RPG.Controllers;
 public class RpgSystem : Controller
 {
     private readonly RpgDbContext _dbContext;
-    public RpgSystem(RpgDbContext dbContext)
+    private readonly IRpgSystemRepository _rpgSystemRepository;
+    public RpgSystem(RpgDbContext dbContext, IRpgSystemRepository rpgSystemRepository)
     {
         _dbContext = dbContext;
+        _rpgSystemRepository = rpgSystemRepository;
     }
 
     // [HttpGet]
@@ -26,29 +31,36 @@ public class RpgSystem : Controller
     [HttpGet]
     public IActionResult GetAllRpgSystem()
     {
-        var rpgSystems = _dbContext.RpgSystems.ToList();
+        var rpgSystems = _rpgSystemRepository.GetAll();
         return Ok(rpgSystems);
     }
 
     [HttpPost]
-    public IActionResult CreateRpgSystem([FromBody] Contracts.RpgSystem rpgSystem)
+    public IActionResult CreateRpgSystem([FromBody] RpgSystemContract rpgSystem)
     {
-        _dbContext.RpgSystems.Add(new Models.RpgSystem()
+        try
         {
-            DiceSystem = (BaseDiceSystem) Enum.Parse(typeof(BaseDiceSystem), rpgSystem.DiceSystem),
-            Name = rpgSystem.Name
-        });
+            _dbContext.RpgSystems.Add(new Models.RpgSystem()
+            {
+                DiceSystem = (BaseDiceSystem) Enum.Parse(typeof(BaseDiceSystem), rpgSystem.DiceSystem),
+                Name = rpgSystem.Name,
+                AddedDate = DateTime.Now,
+                ModifiedDate = rpgSystem.Modified ?? DateTime.Now
+            });
+        }
+        catch (Exception e)
+        {
+            return BadRequest();
+        }
+
         _dbContext.SaveChanges();
         return Ok();
     }
 
     [HttpDelete]
-    public IActionResult DeleteRpgSystem([FromBody] string name)
+    public IActionResult DeleteRpgSystem([FromQuery] Guid id)
     {
-        var toDelete = _dbContext.RpgSystems.Where(system => system.Name == name).FirstOrDefault();
-        _dbContext.Remove(toDelete);
-        _dbContext.SaveChanges();
-
+        _rpgSystemRepository.Delete(id);
         return Ok();
     }
     

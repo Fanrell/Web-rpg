@@ -5,30 +5,29 @@
     <projectFile profileName="IIS Express">RPG.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2434627-848a-4d40-a7f5-405ad6ef3b6f" name="Changes" comment="User table migration">
-      <change afterPath="$PROJECT_DIR$/Contracts/RpgSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20220801095934_Base_Tables.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20220801095934_Base_Tables.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Enums/BaseDiceSystem.cs" afterDir="false" />
+    <list default="true" id="b2434627-848a-4d40-a7f5-405ad6ef3b6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Context/Repositories/Interface/IRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Context/Repositories/Interface/IRpgSystemRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Context/Repositories/Repository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Context/Repositories/RpgSystemRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20220803121320_BaseEntity.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20220803121320_BaseEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/BaseEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Context/RpgDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Context/RpgDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contracts/RpgSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/RpgSystemContract.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/RpgSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RpgSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220801081547_User Table.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220801081547_User Table.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Migrations/RpgDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/RpgDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/CharacterSheet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CharacterSheet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/RpgSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RpgSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RPG.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RPG.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseLocalColorSettings">
-    <colors>
-      <entry key="ecf032c3-aa0d-419c-ba8d-bead89c6e7a3" value="Blue" />
-    </colors>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -38,9 +37,10 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/#Trening/RPG/Controllers/User.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67ca8eeb9c334d2fa512bcc5d9c5093b200b90/59/28f39b04/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1aa09753939e28a72f6cb7b5dbf4a228684deb332ec2be3262b9df2cb87fea/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9f3f2539caf1d1d3bc962f51b12a49523c53a6a135dd252df0b23b14b3515df/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3a8dfd928d7124044723494a9a7b2872a8bb9f96333d4baed4e1992126616ce/Check.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,22 +53,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver.localdb",
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;,
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.RPG">
     <configuration name="RPG" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/RPG.csproj" />
@@ -109,7 +109,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659338807170</updated>
-      <workItem from="1659338809565" duration="9025000" />
+      <workItem from="1659338809565" duration="10136000" />
+      <workItem from="1659520626400" duration="6060000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1659339347270</created>
@@ -132,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659342164981</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Base RpgSystem's controler behaviour">
+      <created>1659349610564</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659349610564</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +163,7 @@
     <MESSAGE value="firs commit" />
     <MESSAGE value="DbContext Configuration" />
     <MESSAGE value="User table migration" />
-    <option name="LAST_COMMIT_MESSAGE" value="User table migration" />
+    <MESSAGE value="Base RpgSystem's controler behaviour" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base RpgSystem's controler behaviour" />
   </component>
 </project>

@@ -3,9 +3,8 @@ using RPG.Models.Enums;
 
 namespace RPG.Models;
 
-public class RpgSystem
+public class RpgSystem : BaseEntity
 {
-    public Guid Id { get; set; }
     [StringLength(100)]
     public string Name { get; set; }
     public BaseDiceSystem DiceSystem { get; set; }

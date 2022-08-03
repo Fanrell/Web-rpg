@@ -2,9 +2,8 @@
 
 namespace RPG.Models;
 
-public class CharacterSheet
+public class CharacterSheet : BaseEntity
 {
-    public Guid Id { get; set; }
     [StringLength(50)]
     public string CharacterName { get; set; }
     [StringLength(255)]

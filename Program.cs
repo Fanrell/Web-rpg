@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using RPG.Context;
+using RPG.Context.Repositories;
+using RPG.Context.Repositories.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<IRpgSystemRepository, RpgSystemRepository>();
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<RpgDbContext>(
